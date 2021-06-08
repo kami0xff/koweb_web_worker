@@ -1,0 +1,11 @@
+/home/kami/Programing/wasm/koweb_web_worker/koweb/target/rls/debug/deps/serde_urlencoded-f61e0d64f9936b9c.rmeta: /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/lib.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/de.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/mod.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/key.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/pair.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/part.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/value.rs
+
+/home/kami/Programing/wasm/koweb_web_worker/koweb/target/rls/debug/deps/serde_urlencoded-f61e0d64f9936b9c.d: /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/lib.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/de.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/mod.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/key.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/pair.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/part.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/value.rs
+
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/lib.rs:
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/de.rs:
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/mod.rs:
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/key.rs:
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/pair.rs:
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/part.rs:
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_urlencoded-0.7.0/src/ser/value.rs:

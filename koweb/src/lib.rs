@@ -47,6 +47,11 @@ pub fn hello_rust() {
     alert("hello rust");
 }
 
+#[wasm_bindgen]
+pub fn add_two_numbers(a: i32, b: i32) -> i32 {
+    return a + b;
+}
+
 fn get_text_from_editor() -> Result<String, ()> {
     let window = web_sys::window().expect("no window found");
     // let editor = window.editor();
@@ -99,6 +104,12 @@ fn string_to_static_str(s: String) -> &'static str {
 
 fn write_to_webpage(event: &kocheck::Event) {
     //i need to match here on the cocheck enum ??
+    //TODO make the two different github repositories
+    //or make a branch with and without actually that sounds a bit nicer \
+    //so i want to move this code to a branch called webworkers
+    //i think that is what i should do
+
+    info!("this is bugged write to webpage");
     let window = web_sys::window().expect("no global `window` exists");
     let document = window.document().expect("should have a document on window");
     let body = document.body().expect("document should have a body");
@@ -119,6 +130,7 @@ fn write_to_webpage(event: &kocheck::Event) {
 }
 
 fn write_output_header(module_name: &String) {
+    info!("this is bugged header");
     let window = web_sys::window().expect("no global `window` exists");
     let document = window.document().expect("should have a document on window");
     let body = document.body().expect("document should have a body");
@@ -209,6 +221,12 @@ pub struct Program {
 //TODO split in multiple files better after
 pub mod fetch_buffer;
 
+#[derive(Serialize, Deserialize)]
+pub struct Message {
+    pub message_type: String,
+    pub value: String,
+}
+
 #[wasm_bindgen]
 pub async fn run_multiple(
     programs: JsValue,
@@ -217,6 +235,7 @@ pub async fn run_multiple(
     no_scope: bool,
     no_infer: bool,
     no_check: bool,
+    worker: web_sys::Worker,
 ) {
     //in here try to start a web worker
     console_log::init_with_level(Level::Trace);
@@ -251,19 +270,30 @@ pub async fn run_multiple(
                     .zip(program.dependency_url_list.into_iter())
                     .collect(),
                 &opt,
+                worker.clone(),
             )
             .await;
         }
     }
 }
 
-async fn produce_from_fetch(dependency_url_list: Vec<(String, String)>, opt: &Opt) {
-    info!("got to produce");
+async fn produce_from_fetch(
+    dependency_url_list: Vec<(String, String)>,
+    opt: &Opt,
+    worker: web_sys::Worker,
+) {
     let mut list_text = vec![];
     let mut list_module = vec![];
     for (file_name, url) in dependency_url_list {
         info!("running file => {}", file_name);
-        write_output_header(&file_name);
+        //write_output_header(&file_name);
+        let header = Message {
+            message_type: String::from("header"),
+            value: String::from(&file_name),
+        };
+        worker
+            .post_message(&JsValue::from_serde(&header).unwrap())
+            .unwrap();
 
         let res = lazy_fetch::get_program_text(&url)
             .await
@@ -277,9 +307,28 @@ async fn produce_from_fetch(dependency_url_list: Vec<(String, String)>, opt: &Op
     //
     let vec_iter = produce_from_js_multiple(&list_text, &opt, list_module);
     let iter = vec_iter.into_iter().flat_map(|it| it);
-    let mut iter = Box::new(iter).inspect(|r| r.iter().for_each(|event| write_to_webpage(event)));
+    let mut iter = Box::new(iter).inspect(|r| {
+        r.iter().for_each(|event| {
+            let output = Message {
+                message_type: String::from("output"),
+                value: format!("{}", event),
+            };
+            worker
+                .post_message(&JsValue::from_serde(&output).unwrap())
+                .unwrap();
+        })
+    });
 
     seq::consume(iter, &opt).expect("something went wrong in the consume");
+
+    let done = Message {
+        message_type: String::from("done"),
+        value: String::from("done"),
+    };
+
+    worker
+        .post_message(&JsValue::from_serde(&done).unwrap())
+        .unwrap();
 }
 
 fn produce_from_js_multiple<'a>(
@@ -298,29 +347,3 @@ fn produce_from_js_multiple<'a>(
     }
     result
 }
-
-//enlever.dk
-//
-
-// symbol checking is performed on the address of the pointer, making them constant-time operations.
-// so the symbol that i care about is sttfa.etap
-// two different symbols pointing to equivalent strings are not equal
-// To consistently assign the same symbols to equivalent strings, you can use the Symbols type.
-
-//it looks like it stores file paths for modules does it read the files again for the symbols ??
-//Ko(Scope(UndeclaredSymbol("sttfa.etap")))
-
-//not sure now i should have modules and such
-//add module name to produce
-//i probably need to remove everything including . in the filename variable
-//pass it to produce from js
-//
-// i need module sttfa when i run sttfa.dk and then maybe i don't need to have all the files
-// loaded at once it would make sense that sttfa.etap is syntax to get stuff from the sttfa module
-//that means i need to run them one by one to make all the modules ?
-
-//hope it works this way it does not something to do with how symbols and things are stored
-//how could it not work its this .etap things that does not want to work im only calling comsume once so
-// def True :
-// sttfa.etap (sttfa.p sttfa.bool())
-//this fails and its the first line of the second file so is the first file not executed properly ?

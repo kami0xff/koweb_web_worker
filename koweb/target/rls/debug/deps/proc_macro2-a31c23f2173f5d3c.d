@@ -1,0 +1,12 @@
+/home/kami/Programing/wasm/koweb_web_worker/koweb/target/rls/debug/deps/proc_macro2-a31c23f2173f5d3c.rmeta: /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/lib.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/marker.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/parse.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/detection.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/fallback.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/wrapper.rs
+
+/home/kami/Programing/wasm/koweb_web_worker/koweb/target/rls/debug/deps/libproc_macro2-a31c23f2173f5d3c.rlib: /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/lib.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/marker.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/parse.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/detection.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/fallback.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/wrapper.rs
+
+/home/kami/Programing/wasm/koweb_web_worker/koweb/target/rls/debug/deps/proc_macro2-a31c23f2173f5d3c.d: /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/lib.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/marker.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/parse.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/detection.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/fallback.rs /home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/wrapper.rs
+
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/lib.rs:
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/marker.rs:
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/parse.rs:
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/detection.rs:
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/fallback.rs:
+/home/kami/.cargo/registry/src/github.com-1ecc6299db9ec823/proc-macro2-1.0.27/src/wrapper.rs:

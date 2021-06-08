@@ -424,8 +424,8 @@ function write_output_html(kontroli_event_text){
 function write_done_html(){
     let div = document.createElement("div");
     let lambda_span = document.createElement("span");
-    lambda_span.className = "lambda";
-    lambda_span.textContent = "v/DONE";
+    lambda_span.className = "done";
+    lambda_span.textContent = "DONE";
     div.setClassName = "prompt";
     div.appendChild(lambda_span);
     let output = document.getElementById("output");

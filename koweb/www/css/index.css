@@ -30,6 +30,12 @@ body {
     }
 } */
 
+
+.done{
+    color: chartreuse;
+    font-weight: bold;
+}
+
 ul {
     list-style-type: none;
     margin-bottom: 10px;
