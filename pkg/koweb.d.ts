@@ -15,6 +15,12 @@ declare namespace wasm_bindgen {
 	*/
 	export function hello_rust(): void;
 	/**
+	* @param {number} a
+	* @param {number} b
+	* @returns {number}
+	*/
+	export function add_two_numbers(a: number, b: number): number;
+	/**
 	* @param {string} cmds_from_js
 	* @param {boolean} eta
 	* @param {boolean} no_scope
@@ -29,9 +35,10 @@ declare namespace wasm_bindgen {
 	* @param {boolean} no_scope
 	* @param {boolean} no_infer
 	* @param {boolean} no_check
+	* @param {Worker} worker
 	* @returns {any}
 	*/
-	export function run_multiple(programs: any, module_to_run: string, eta: boolean, no_scope: boolean, no_infer: boolean, no_check: boolean): any;
+	export function run_multiple(programs: any, module_to_run: string, eta: boolean, no_scope: boolean, no_infer: boolean, no_check: boolean, worker: Worker): any;
 	
 }
 
@@ -42,8 +49,9 @@ declare interface InitOutput {
   readonly get_graph_rust: (a: number, b: number) => number;
   readonly get_string_js: (a: number, b: number, c: number) => void;
   readonly run_test: (a: number, b: number, c: number, d: number, e: number, f: number) => void;
-  readonly run_multiple: (a: number, b: number, c: number, d: number, e: number, f: number, g: number) => number;
+  readonly run_multiple: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number) => number;
   readonly hello_rust: () => void;
+  readonly add_two_numbers: (a: number, b: number) => number;
   readonly __wbindgen_malloc: (a: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number) => number;
   readonly __wbindgen_export_2: WebAssembly.Table;
