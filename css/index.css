@@ -14,7 +14,7 @@ body {
   margin-right: 10%; */
     margin: 0;
     padding: 0;
-    background-color: #fffafa;
+    background-color: white;
     /* background-color: #1e1e1e; */
     font-family: "Roboto", sans-serif;
     color: rgb(20, 20, 20);
@@ -57,7 +57,7 @@ ul {
     place-items: center;
     margin: 2em 8em 8em 8em;
     /* height: 100vh; */
-    grid-template-columns: minmax(800px, 1fr);
+    grid-template-columns: auto;
     grid-template-rows: auto auto minmax(650px, 1fr) auto auto auto auto 8em;
     grid-template-areas:
         "h1"
