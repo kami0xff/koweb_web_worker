@@ -1,4 +1,6 @@
 
+import init, {run_test} from './pkg/koweb.js';
+
 let program_list = [];
 
 class Program {
@@ -113,7 +115,7 @@ function load_text_from_url_in_editor(program_text) {
 async function run(program = undefined) {
     // try {
     remove_all_outputs_dom();
-    // await init();
+    await init();
     var testing = await window.editor.getValue();
 
     if (program === undefined) {
